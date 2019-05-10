@@ -1,10 +1,9 @@
-# require 'typhoeus'
 require 'faraday'
-# require 'oj'
 require 'json'
 require 'byebug'
-require_relative 'product_methods'
-require_relative 'color_methods'
+require "benjamin_moore_api/version"
+require "product_methods"
+require "color_methods"
 
 module BenjaminMooreApi
   class Client
@@ -21,16 +20,8 @@ module BenjaminMooreApi
 
     private
 
-    def client
-      @_client ||= Faraday.new(API_ENDPOINT) do |client|
-        client.request :url_encoded
-        client.adapter Faraday.default_adapter
-      end
-    end
-
     def request(http_method:, endpoint:, params: {})
       response = client.public_send(http_method, endpoint, params)
-      # parsed_response = Oj.load(response.body)
       if response_successful?(response)
         JSON.parse(response.body)
       else
@@ -38,6 +29,13 @@ module BenjaminMooreApi
           code: response.status,
           response: response.body
         }
+      end
+    end
+
+    def client
+      @_client ||= Faraday.new(API_ENDPOINT) do |client|
+        client.request :url_encoded
+        client.adapter Faraday.default_adapter
       end
     end
 
