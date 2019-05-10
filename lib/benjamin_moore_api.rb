@@ -31,7 +31,6 @@ module BenjaminMooreApi
     def request(http_method:, endpoint:, params: {})
       response = client.public_send(http_method, endpoint, params)
       # parsed_response = Oj.load(response.body)
-      # byebug
       if response_successful?(response)
         JSON.parse(response.body)
       else
