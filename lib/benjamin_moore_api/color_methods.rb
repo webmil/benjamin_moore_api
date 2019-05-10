@@ -1,3 +1,5 @@
+require 'byebug'
+
 module BenjaminMooreApi
   module ColorMethods
     def get_palettes

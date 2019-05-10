@@ -2,13 +2,13 @@ require 'faraday'
 require 'json'
 require 'byebug'
 require "benjamin_moore_api/version"
-require "product_methods"
-require "color_methods"
+require_relative "benjamin_moore_api/product_methods"
+require_relative "benjamin_moore_api/color_methods"
 
 module BenjaminMooreApi
   class Client
-    include ProductMethods
-    include ColorMethods
+    include BenjaminMooreApi::ProductMethods
+    include BenjaminMooreApi::ColorMethods
 
     API_ENDPOINT = 'https://api.benjaminmoore.com/'.freeze
 
