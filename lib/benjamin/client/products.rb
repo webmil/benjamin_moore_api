@@ -2,7 +2,7 @@ module Benjamin
   class Client
     module Products
       def families
-        get("/product/GetFamilies", { Accept: 'application/json' })
+        get("/product/GetFamilies")
       end
     end
   end
