@@ -19,6 +19,7 @@ module BenjaminMooreApi
       request = Typhoeus::Request.new(
         "#{API_ENDPOINT}#{@api_key}#{path}",
         method: method,
+        params: options,
         headers:  { Accept: 'application/json' }
       )
       request.run
