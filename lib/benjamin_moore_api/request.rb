@@ -2,7 +2,7 @@ require 'typhoeus'
 require_relative 'http_status_codes'
 require_relative 'api_exceptions'
 
-module Benjamin
+module BenjaminMooreApi
   module Request
     include HttpStatusCodes
     include ApiExceptions

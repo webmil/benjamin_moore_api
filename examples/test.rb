@@ -1,5 +1,5 @@
-require_relative '../lib/benjamin_moor_api'
+require_relative '../lib/benjamin_moore_api'
 
-client = BenjaminMoorApi.client(api_key: 'api-key')
+client = BenjaminMooreApi.client(api_key: 'api_key')
 
 p client.families

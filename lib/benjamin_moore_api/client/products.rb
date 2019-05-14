@@ -1,9 +1,9 @@
 require_relative '../request'
 
-module Benjamin
+module BenjaminMooreApi
   class Client
     module Products
-      include Benjamin::Request
+      include BenjaminMooreApi::Request
 
       def families
         get("/product/GetFamilies")

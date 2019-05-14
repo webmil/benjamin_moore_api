@@ -1,9 +1,9 @@
 require_relative '../request'
 
-module Benjamin
+module BenjaminMooreApi
   class Client
     module Colors
-      include Benjamin::Request
+      include BenjaminMooreApi::Request
 
       def palletes
         get("/color/GetPalettes")
