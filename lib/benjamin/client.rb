@@ -1,11 +1,10 @@
-require_relative 'request'
 require_relative 'configurable'
 require_relative 'client/colors'
 require_relative 'client/products'
 
 module Benjamin
   class Client
-    include Benjamin::Request
+
     include Benjamin::Configurable
     include Benjamin::Client::Products
     include Benjamin::Client::Colors
