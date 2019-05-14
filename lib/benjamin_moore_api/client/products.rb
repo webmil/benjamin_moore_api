@@ -5,9 +5,10 @@ module BenjaminMooreApi
     module Products
       include BenjaminMooreApi::Request
 
-      def families
-        get("/product/GetFamilies")
+      def families(category: '', countryCode: 'en-us')
+        get("/product/GetFamilies", category: category, countryCode: countryCode)
       end
+
     end
   end
 end
