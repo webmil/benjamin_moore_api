@@ -1,9 +1,8 @@
 module Benjamin
   class Client
     module Colors
-      API_ENDPOINT = 'https://stage-api.benjaminmoore.com/api/'.freeze
       def palletes
-        get("#{API_ENDPOINT}#{@api_key}/color/GetPalettes", { Authorization: "token #{@api_key}", Accept: 'application/json' })
+        get("/color/GetPalettes", { Accept: 'application/json' })
       end
     end
   end

@@ -7,6 +7,8 @@ module Benjamin
     include HttpStatusCodes
     include ApiExceptions
 
+    API_ENDPOINT = 'https://stage-api.benjaminmoore.com/api/'.freeze
+
     def get(url, options = {})
       request(:get, url, options)
     end
@@ -15,7 +17,7 @@ module Benjamin
 
     def request(method, path, options = {})
       request = Typhoeus::Request.new(
-        path,
+        "#{API_ENDPOINT}#{@api_key}" + path,
         method: method,
         headers: options
       )
