@@ -1,5 +1,5 @@
-require_relative 'lib/benjamin'
+require_relative 'lib/benjamin_moor_api'
 
-client = Benjamin::Spot.client(api_key: 'api_key')
+client = BenjaminMoorApi.client(api_key: 'api_key')
 
 p client.families
