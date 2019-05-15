@@ -6,7 +6,7 @@ module BenjaminMooreApi
       include BenjaminMooreApi::Request
 
       def products_from_number(product_list:, country_code: 'en-us')
-        get('/product/GetFamilies', productlist: product_list, countryCode: country_code)
+        get('/product/GetProductsFromNumbers', productlist: product_list, countryCode: country_code)
       end
 
       def families_by_codes(codes:, country_code: 'en-us')
@@ -18,10 +18,10 @@ module BenjaminMooreApi
       end
 
       def families(category: '', country_code: 'en-us')
-        get('/product/GetProductsFromNumbers', category: category, countryCode: country_code)
+        get('/product/GetFamilies', category: category, countryCode: country_code)
       end
 
-      def family(code:,country_code: 'en-us')
+      def family(code:, country_code: 'en-us')
         get('/product/GetFamily', code: code, countryCode: country_code)
       end
     end
