@@ -1,6 +1,6 @@
 # BenjaminMooreApi
 
-Wrapper for Benjamin Moore API
+Wrapper for Benjamin Moore API. 0.2.3.
 
 ## Installation
 
