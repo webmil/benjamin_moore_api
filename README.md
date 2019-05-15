@@ -1,13 +1,13 @@
 # BenjaminMooreApi
 
-Wrapper for Benjamin Moore API. 0.2.3.
+Wrapper for Benjamin Moore API.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'benjamin_moore_api'
+gem 'benjamin_moore_api', 'x.y.z', github: 'webmil/benjamin_moore_api'
 ```
 
 And then execute:
