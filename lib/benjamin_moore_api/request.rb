@@ -1,4 +1,5 @@
 require 'typhoeus'
+require 'json'
 require_relative 'http_status_codes'
 require_relative 'api_exceptions'
 
@@ -24,7 +25,7 @@ module BenjaminMooreApi
       )
       request.run
 
-      return request.response.body if response_successful?(request.response.code)
+      return JSON.parse(request.response.body) if response_successful?(request.response.code)
 
       raise error_class(request.response.code)
     end
