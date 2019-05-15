@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-client = BenjaminMoorApi.client(api_key: 'api_key')
+client = BenjaminMooreApi.client(api_key: 'api_key')
 
 client.families
 
