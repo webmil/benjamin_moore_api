@@ -21,7 +21,7 @@ module BenjaminMooreApi
         get('/color/GetPalettesByCategory', { category: category, colorData: with_colors, countryCode: country_code })
       end
 
-      def palettes_by_code(code:, country_code: 'en-us')
+      def palette_by_code(code:, country_code: 'en-us')
         get('/color/GetPaletteByCode', { code: code, countryCode: country_code })
       end
     end
