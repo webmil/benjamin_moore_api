@@ -21,6 +21,7 @@ module BenjaminMooreApi
         "#{API_ENDPOINT}#{@api_key}#{path}",
         method: method,
         params: options,
+        timeout: 180,
         headers:  { Accept: 'application/json' }
       )
       request.run
