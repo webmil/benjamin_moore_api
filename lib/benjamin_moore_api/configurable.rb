@@ -1,7 +1,7 @@
 module BenjaminMooreApi
   module Configurable
     def self.keys
-      [:api_key]
+      [:api_key, :api_endpoint]
     end
 
     def options
