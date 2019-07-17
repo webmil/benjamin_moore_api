@@ -3,3 +3,8 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'typhoeus'
+
+group :test do
+  gem 'rspec'
+  gem 'byebug'
+end
