@@ -17,8 +17,9 @@ module BenjaminMooreApi
     private
 
     def request(method, path, options = {})
+      endpoint = @api_endpoint ? @api_endpoint :  API_ENDPOINT
       request = Typhoeus::Request.new(
-        "#{API_ENDPOINT}#{@api_key}#{path}",
+        "#{endpoint}#{@api_key}#{path}",
         method: method,
         params: options,
         timeout: 180,
