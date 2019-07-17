@@ -25,11 +25,20 @@ module BenjaminMooreApi
         timeout: 180,
         headers:  { Accept: 'application/json' }
       )
+
+      request.on_complete do |response|
+        if response.success?
+          return JSON.parse(request.response.body)
+        elsif response.timed_out?
+          raise TimeOutError
+        elsif response.code == 0
+          raise NoResponseError
+        else
+          raise error_class(request.response.code)
+        end
+      end
+
       request.run
-
-      return JSON.parse(request.response.body) if response_successful?(request.response.code)
-
-      raise error_class(request.response.code)
     end
 
     def response_successful?(response_code = nil)
